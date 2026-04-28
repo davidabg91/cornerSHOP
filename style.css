@@ -647,12 +647,45 @@ footer p {
 }
 
 @media (max-width: 768px) {
+  .hero {
+    padding-top: 140px; /* Increased to prevent navbar overlap */
+    min-height: auto;
+    padding-bottom: 60px;
+  }
+
+  .title-brand-wrapper {
+    padding: 1rem 1.5rem;
+    margin: 0 auto 1rem;
+  }
+
+  .title-brand {
+    letter-spacing: -1px;
+  }
+
+  .title-tagline {
+    font-size: 1.4rem;
+    margin-top: 1rem;
+  }
+
   .hero-content {
     text-align: center;
   }
   
+  .hero-content p {
+    padding-left: 0;
+    border-left: none;
+    margin: 0 auto 2.5rem;
+    font-size: 1.1rem;
+  }
+
   .hero-actions {
     justify-content: center;
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .hero-actions .btn {
+    width: 100%;
   }
   
   .business-content {
