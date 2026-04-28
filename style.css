@@ -572,9 +572,25 @@ section {
   background-color: #e2e8f0;
 }
 
+html, body {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+}
+
+body {
+  font-family: var(--font-body);
+  color: var(--text-dark);
+  line-height: 1.6;
+  background-color: var(--bg-main);
+  overflow-x: hidden;
+  padding: 0;
+  margin: 0;
+}
+
 /* Footer */
 footer {
-  padding: 4rem 0;
+  padding: 4rem 0 0 0; /* No bottom padding here */
   background-color: var(--bg-slate);
   border-top: 1px solid #e2e8f0;
 }
@@ -585,6 +601,7 @@ footer {
   align-items: center;
   flex-wrap: wrap;
   gap: 2rem;
+  padding-bottom: 4rem; /* Move bottom padding here */
 }
 
 .footer-logo {
