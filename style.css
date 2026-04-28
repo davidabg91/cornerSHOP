@@ -605,9 +605,30 @@ footer {
   color: var(--primary);
 }
 
-footer p {
-  margin-bottom: 0;
+.footer-credit {
+  font-size: 0.9rem;
   color: var(--text-muted);
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.credit-link {
+  color: var(--primary);
+  text-decoration: none;
+  font-weight: 700;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  transition: var(--transition);
+  background: linear-gradient(135deg, var(--primary) 0%, var(--accent) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  border-bottom: 1px solid rgba(16, 185, 129, 0.3);
+}
+
+.credit-link:hover {
+  letter-spacing: 2px;
+  opacity: 0.8;
 }
 
 /* Mobile Navigation */
