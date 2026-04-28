@@ -653,6 +653,68 @@ footer p {
   }
 }
 
+/* Suggestions Section */
+.suggestions {
+  background-color: var(--bg-slate);
+}
+
+.suggestion-card {
+  background: white;
+  border-radius: 32px;
+  padding: 4rem;
+  box-shadow: var(--shadow-lg);
+  display: grid;
+  grid-template-columns: 1fr 1.2fr;
+  gap: 4rem;
+  align-items: center;
+}
+
+.suggestion-header h2 {
+  font-size: 2.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.suggestion-header p {
+  color: var(--text-dark);
+  opacity: 0.7;
+  font-size: 1.1rem;
+}
+
+.suggestion-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.form-group input, 
+.form-group textarea {
+  width: 100%;
+  padding: 1.2rem;
+  border-radius: 12px;
+  border: 2px solid #e2e8f0;
+  font-family: var(--font-body);
+  font-size: 1rem;
+  transition: var(--transition);
+  background-color: #f8fafc;
+}
+
+.form-group input:focus, 
+.form-group textarea:focus {
+  outline: none;
+  border-color: var(--accent);
+  background-color: white;
+  box-shadow: 0 0 0 4px rgba(16, 185, 129, 0.1);
+}
+
+@media (max-width: 992px) {
+  .suggestion-card {
+    grid-template-columns: 1fr;
+    padding: 3rem 2rem;
+    gap: 2rem;
+    text-align: center;
+  }
+}
+
 /* Animations */
 .fade-in {
   opacity: 0;

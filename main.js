@@ -70,4 +70,28 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
   });
 });
 
+// Product Suggestion Form Logic
+const suggestionForm = document.getElementById('suggestionForm');
+if (suggestionForm) {
+  suggestionForm.addEventListener('submit', (e) => {
+    e.preventDefault();
+    const product = document.getElementById('productInput').value;
+    const submitBtn = suggestionForm.querySelector('button');
+    const originalText = submitBtn.innerText;
+    
+    submitBtn.innerText = 'Изпратено! Благодарим.';
+    submitBtn.style.backgroundColor = '#10B981';
+    
+    // Clear form
+    suggestionForm.reset();
+    
+    setTimeout(() => {
+      submitBtn.innerText = originalText;
+      submitBtn.style.backgroundColor = '';
+    }, 3000);
+    
+    console.log(`New product recommendation: ${product}`);
+  });
+}
+
 console.log('The Corner website initialized successfully.');
