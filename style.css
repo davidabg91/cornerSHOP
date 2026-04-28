@@ -42,6 +42,8 @@ body {
   line-height: 1.6;
   background-color: var(--bg-main);
   overflow-x: hidden;
+  padding-bottom: 0;
+  margin-bottom: 0;
 }
 
 .container {
@@ -606,10 +608,11 @@ footer {
 }
 
 .footer-bottom {
-  padding: 1.5rem 0;
-  border-top: 1px solid rgba(0, 0, 0, 0.05);
+  padding: 1.25rem 0;
+  border-top: 1px solid rgba(255, 255, 255, 0.05);
   background-color: #0A192F; /* Deep Navy */
-  margin-top: 2rem;
+  margin-top: 3rem;
+  margin-bottom: 0;
 }
 
 .footer-credit {
