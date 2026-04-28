@@ -669,6 +669,13 @@ footer p {
 .mobile-nav-footer {
   width: 100%;
   max-width: 300px;
+  display: flex;
+  justify-content: center;
+}
+
+.mobile-nav-footer .btn {
+  width: 100%;
+  text-align: center;
 }
 .mobile-menu-toggle {
   display: none;
