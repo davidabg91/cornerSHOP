@@ -34,13 +34,29 @@
         <div class="nav-cta">
           <a href="https://www.google.com/maps/place/THE+CORNER/@42.6802866,23.3938374,19z/data=!4m6!3m5!1s0x40aa87785869ad5d:0x86c6ba3afe4b8bd1!8m2!3d42.6802865!4d23.3945457" target="_blank" class="btn btn-primary">Виж локацията</a>
         </div>
-        <button class="mobile-menu-toggle" id="menuToggle">
+        <button class="mobile-menu-toggle" id="menuToggle" aria-label="Toggle Menu">
           <span></span>
           <span></span>
           <span></span>
         </button>
       </div>
     </header>
+
+    <!-- Mobile Navigation Overlay -->
+    <div class="mobile-nav" id="mobileNav">
+      <button class="mobile-nav-close" id="closeNav">&times;</button>
+      <ul class="mobile-nav-links">
+        <li><a href="#home">Начало</a></li>
+        <li><a href="#products">Асортимент</a></li>
+        <li><a href="#suggestions">Предложи продукт</a></li>
+        <li><a href="#business">Бизнес</a></li>
+        <li><a href="#upcoming">Ново</a></li>
+        <li><a href="#contact">Контакти</a></li>
+      </ul>
+      <div class="mobile-nav-footer">
+        <a href="tel:0877056101" class="btn btn-primary btn-lg">Обади се сега</a>
+      </div>
+    </div>
 
     <main>
       <!-- Hero Section -->

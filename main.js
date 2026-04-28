@@ -8,14 +8,28 @@ window.addEventListener('scroll', () => {
   }
 });
 
-// Mobile Menu Toggle
+// Mobile Menu Toggle Logic
 const menuToggle = document.getElementById('menuToggle');
-const navLinks = document.querySelector('.nav-links');
+const mobileNav = document.getElementById('mobileNav');
+const closeNav = document.getElementById('closeNav');
+const mobileNavLinks = document.querySelectorAll('.mobile-nav-links a');
 
-if (menuToggle) {
+if (menuToggle && mobileNav) {
   menuToggle.addEventListener('click', () => {
-    // Basic mobile menu logic (could be expanded with a full mobile overlay)
-    alert('Мобилното меню ще бъде налично скоро!');
+    mobileNav.classList.add('active');
+    document.body.style.overflow = 'hidden'; // Prevent scrolling when menu is open
+  });
+
+  const closeMenu = () => {
+    mobileNav.classList.remove('active');
+    document.body.style.overflow = ''; // Restore scrolling
+  };
+
+  if (closeNav) closeNav.addEventListener('click', closeMenu);
+  
+  // Close menu when a link is clicked
+  mobileNavLinks.forEach(link => {
+    link.addEventListener('click', closeMenu);
   });
 }
 
