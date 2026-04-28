@@ -163,12 +163,12 @@
               <h2>Искаш нов продукт в магазина?</h2>
               <p>Напиши ни какво ти липсва в асортимента ни и ние ще направим всичко възможно да го добавим за теб.</p>
             </div>
-            <form class="suggestion-form" id="suggestionForm">
+            <form class="suggestion-form" action="https://formspree.io/f/YOUR_FORM_ID" method="POST" id="suggestionForm">
               <div class="form-group">
-                <input type="text" placeholder="Име на продукта (напр. Гръцки йогурт)" required id="productInput">
+                <input type="text" name="product_name" placeholder="Име на продукта (напр. Гръцки йогурт)" required id="productInput">
               </div>
               <div class="form-group">
-                <textarea placeholder="Допълнителни детайли или марка (по желание)" rows="3" id="detailsInput"></textarea>
+                <textarea name="details" placeholder="Допълнителни детайли или марка (по желание)" rows="3" id="detailsInput"></textarea>
               </div>
               <button type="submit" class="btn btn-primary btn-lg">Изпрати предложение</button>
             </form>

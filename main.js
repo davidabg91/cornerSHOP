@@ -70,27 +70,46 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
   });
 });
 
-// Product Suggestion Form Logic
+// Product Suggestion Form Logic with Formspree (AJAX)
 const suggestionForm = document.getElementById('suggestionForm');
 if (suggestionForm) {
-  suggestionForm.addEventListener('submit', (e) => {
+  suggestionForm.addEventListener('submit', async (e) => {
     e.preventDefault();
-    const product = document.getElementById('productInput').value;
     const submitBtn = suggestionForm.querySelector('button');
     const originalText = submitBtn.innerText;
     
-    submitBtn.innerText = 'Изпратено! Благодарим.';
-    submitBtn.style.backgroundColor = '#10B981';
+    // Prepare data
+    const formData = new FormData(suggestionForm);
     
-    // Clear form
-    suggestionForm.reset();
-    
-    setTimeout(() => {
-      submitBtn.innerText = originalText;
-      submitBtn.style.backgroundColor = '';
-    }, 3000);
-    
-    console.log(`New product recommendation: ${product}`);
+    try {
+      submitBtn.innerText = 'Изпращане...';
+      submitBtn.disabled = true;
+
+      const response = await fetch(suggestionForm.action, {
+        method: 'POST',
+        body: formData,
+        headers: {
+          'Accept': 'application/json'
+        }
+      });
+
+      if (response.ok) {
+        submitBtn.innerText = 'Изпратено! Благодарим.';
+        submitBtn.style.backgroundColor = '#10B981';
+        suggestionForm.reset();
+      } else {
+        throw new Error('Грешка при изпращане');
+      }
+    } catch (error) {
+      submitBtn.innerText = 'Грешка. Пробвай пак.';
+      submitBtn.style.backgroundColor = '#ef4444';
+    } finally {
+      submitBtn.disabled = false;
+      setTimeout(() => {
+        submitBtn.innerText = originalText;
+        submitBtn.style.backgroundColor = '';
+      }, 4000);
+    }
   });
 }
 
