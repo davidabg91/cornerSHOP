@@ -88,52 +88,56 @@ p { margin-bottom: 1rem; color: var(--text-dark); }
 .title-shop-badge {
   display: flex;
   align-items: center;
-  gap: 0.6rem;
-  background: rgba(16, 185, 129, 0.15);
-  backdrop-filter: blur(12px);
-  border: 1px solid rgba(16, 185, 129, 0.4);
-  padding: 0.6rem 1.5rem;
-  border-radius: 14px;
+  justify-content: center;
+  background: var(--accent);
+  padding: 0.5rem 1.5rem;
   width: fit-content;
-  margin-bottom: 0.5rem;
+  margin-bottom: 1.5rem;
   position: relative;
   z-index: 10;
-  box-shadow: 0 10px 25px rgba(16, 185, 129, 0.15);
+  box-shadow: 8px 8px 0px var(--primary-light);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  transition: var(--transition);
   animation: floatBadge 4s ease-in-out infinite;
 }
 
-.title-shop-badge::before {
-  content: '';
-  position: absolute;
-  bottom: -6px;
-  left: 20px;
-  width: 12px;
-  height: 12px;
-  background: inherit;
-  border-right: 1px solid rgba(16, 185, 129, 0.4);
-  border-bottom: 1px solid rgba(16, 185, 129, 0.4);
-  transform: rotate(45deg);
-  backdrop-filter: inherit;
+.title-shop-badge:hover {
+  transform: translate(-2px, -2px);
+  box-shadow: 10px 10px 0px var(--primary-light);
 }
 
 .title-shop-badge span {
   font-family: var(--font-headings);
-  font-weight: 800;
-  font-size: 0.75rem;
-  letter-spacing: 2px;
-  color: var(--accent);
+  font-weight: 900;
+  font-size: 0.7rem;
+  letter-spacing: 5px;
+  color: white;
   text-transform: uppercase;
+  display: block;
+  line-height: 1;
 }
 
-.badge-icon {
-  font-size: 1.1rem;
-  filter: drop-shadow(0 0 5px var(--accent));
+/* Decorative "mounting" brackets */
+.title-shop-badge::before,
+.title-shop-badge::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  width: 8px;
+  height: 2px;
+  background: white;
+  opacity: 0.5;
+  transform: translateY(-50%);
 }
+
+.title-shop-badge::before { left: 8px; }
+.title-shop-badge::after { right: 8px; }
 
 @keyframes floatBadge {
-  0%, 100% { transform: translateY(0) rotate(-1deg); }
-  50% { transform: translateY(-8px) rotate(1deg); }
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-5px); }
 }
+
 
 
 .title-brand-wrapper {
